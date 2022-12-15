@@ -6,10 +6,8 @@ public class DeluxePizza extends Pizza {
         super(isVeg);
         // your code goes here
         // extra cheese and toppings
-        super.addExtraCheese();
-        super.addExtraToppings();
+        addExtraCheese();
+        addExtraToppings();
 
-        super.cheeseAdded = true;
-        super.toppingsAdded = true;
     }
 }
