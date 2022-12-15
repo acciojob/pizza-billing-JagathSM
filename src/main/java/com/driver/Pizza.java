@@ -21,12 +21,12 @@ public class Pizza {
         this.isVeg = isVeg;
         if(isVeg){
             this.price = 300;
-            this.bill = "Base Price Of The Pizza: 300\\\n";
+            this.bill = "Base Price Of The Pizza: 300\\";
             this.total += 300;
         }
         else{
             this.price = 400;
-            this.bill = "Base Price Of The Pizza: 400\\\n";
+            this.bill = "\nBase Price Of The Pizza: 400\\";
             this.total += 400;
         }
         this.toppingsAdded = false;
@@ -43,22 +43,22 @@ public class Pizza {
         }
         if(isVeg){
             if(toppingsAdded){
-                String replace = this.bill.replace("Extra Toppings Added: 70\\\n", "Extra Cheese Added: 80\\\n");
-                this.bill = replace + "Extra Toppings Added: 70\\\n";
+                String replace = this.bill.replace("\nExtra Toppings Added: 70\\", "\nExtra Cheese Added: 80\\");
+                this.bill = replace + "\nExtra Toppings Added: 70\\";
             }
             else{
-                this.bill += "Extra Cheese Added: 80\\\n";
+                this.bill += "\nExtra Cheese Added: 80\\";
             }
             this.total += 80;
             this.cheeseAdded = true;
             return;
         }
         if(toppingsAdded){
-            this.bill = this.bill.replace("Extra Toppings Added: 120\\\n","Extra Cheese Added: 80\\\n");
-            this.bill += "Extra Toppings Added: 120\\\n";
+            this.bill = this.bill.replace("\nExtra Toppings Added: 120\\","\nExtra Cheese Added: 80\\");
+            this.bill += "\nExtra Toppings Added: 120\\";
         }
         else{
-            this.bill += "Extra Cheese Added: 80\\\n";
+            this.bill += "\nExtra Cheese Added: 80\\";
         }
         this.total += 80;
         this.cheeseAdded = true;
@@ -69,23 +69,23 @@ public class Pizza {
             return;
         }
         if(isVeg){
-            this.bill += "Extra Toppings Added: 70\\\n";
+            this.bill += "\nExtra Toppings Added: 70\\";
             this.total += 70;
             this.toppingsAdded = true;
             return;
         }
-        this.bill += "Extra Toppings Added: 120\\\n";
+        this.bill += "\nExtra Toppings Added: 120\\";
         this.total += 120;
         this.toppingsAdded = true;
     }
 
     public void addTakeaway(){
-        this.bill += "Paperbag Added: 20\\\n";
+        this.bill += "\nPaperbag Added: 20\\";
         this.total += 20;
     }
 
     public String getBill(){
-        this.bill += "Total Price: " + this.total;
+        this.bill += "\nTotal Price: " + this.total;
         return this.bill;
     }
 }
